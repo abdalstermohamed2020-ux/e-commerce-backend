@@ -1,4 +1,10 @@
 <?php
+
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization, cache-control");
+header("Content-Type: application/json; charset=UTF-8");
+
 include 'db.php';
 
 // استقبال البيانات اللي جاية من الـ React (JSON)

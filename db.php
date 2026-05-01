@@ -1,24 +1,12 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
-header("Access-Control-Allow-Headers: Content-Type, Authorization");
+$host = "fdb1034.awardspace.net"; // ده الـ Host اللي كان ظاهر في صورة phpMyAdmin
+$user = "4754940_electronic";     // اسم المستخدم بتاعك
+$pass = "Absattar2005";          // الباسورد اللي إنت عملتها
+$dbname = "4754940_electronic";   // اسم قاعدة البيانات
 
-// التصحيح: اكتب العنوان فقط بدون البورت هنا
-$host = '127.0.0.1'; 
-$user = 'root';
-$pass = '';
-$dbname = 'electronical_backend';
-$port = 3307; 
-
-mysqli_report(MYSQLI_REPORT_OFF);
-
-// الربط الصحيح باستخدام المنفذ كمعامل منفصل
-$conn = new mysqli($host, $user, $pass, $dbname, $port);
+$conn = new mysqli($host, $user, $pass, $dbname);
 
 if ($conn->connect_error) {
-    header('Content-Type: application/json');
-    echo json_encode(["status" => "error", "message" => "فشل الاتصال: " . $conn->connect_error]);
-    exit;
+    die("Connection failed: " . $conn->connect_error);
 }
-
-$conn->set_charset("utf8mb4");
+?>

@@ -1,6 +1,10 @@
 <?php
-header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST, DELETE, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
 header("Content-Type: application/json; charset=UTF-8");
+
+header("Access-Control-Allow-Origin: *");
+
 
 include 'db.php';
 
